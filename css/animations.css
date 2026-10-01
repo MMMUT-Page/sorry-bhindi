@@ -1,0 +1,8 @@
+/* Scroll reveals: add class "reveal" to any element; optional style="--d:.3s" for a delay */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.6s var(--ease) var(--d,0s),transform 1.6s var(--ease) var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.seq{opacity:1!important;transform:none!important}
+  .grain,.glow{display:none}
+}

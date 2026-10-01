@@ -1,0 +1,58 @@
+/* Story, night, letter, final pages */
+.hero{min-height:88svh;display:grid;place-content:center;text-align:center;padding:7rem 1.5rem 3rem}
+.hero h1{font-size:clamp(2.6rem,10vw,6.5rem)}
+.hero p{font:italic 300 clamp(1.1rem,3vw,1.6rem) var(--serif);color:var(--mute);margin-top:1.2rem}
+
+.frame{position:relative;overflow:hidden;aspect-ratio:4/5;background:#1a1716;box-shadow:0 30px 60px -25px #000}
+.frame img{width:100%;height:100%;object-fit:cover;filter:sepia(.22) contrast(1.05) saturate(.85)}
+.frame[data-parallax] img{height:118%}
+.ph{display:grid;place-content:center;text-align:center;border:1px dashed rgba(241,233,223,.25)}
+.ph img{display:none}
+.ph::after{content:"Add photo: " attr(data-file);color:var(--mute);font-size:.75rem;letter-spacing:.1em;padding:1rem}
+
+.chapter{max-width:1100px;margin:0 auto;padding:6rem 1.5rem;display:grid;gap:2.2rem;align-items:center}
+.chapter h2{font-size:clamp(1.9rem,5.5vw,3.4rem)}
+.chapter .small{margin-bottom:1rem;display:block}
+.chapter .frame{width:100%;max-width:440px;justify-self:center}
+.chapter.quiet{min-height:80svh;text-align:center;place-content:center}
+.chapter.quiet h2{font-size:clamp(1.3rem,3.6vw,2rem);color:var(--mute);font-style:italic;max-width:24ch;margin:0 auto}
+@media(min-width:800px){
+  .chapter:not(.quiet){grid-template-columns:1fr 1fr;gap:6rem;min-height:90svh}
+  .chapter.flip .frame{order:-1}
+}
+
+.beat{min-height:100svh;display:grid;place-content:center;justify-items:center;text-align:center;padding:5rem 1.5rem}
+.beat p{font:italic 300 clamp(1.8rem,6.4vw,4rem)/1.25 var(--serif);max-width:19ch}
+.beat p.long{max-width:24ch;font-size:clamp(1.5rem,5vw,3rem)}
+.beat p.soft{font-size:clamp(1.2rem,3.4vw,1.8rem);color:var(--mute);font-style:normal;max-width:30ch}
+.beat .frame{width:min(86vw,460px)}
+.night{background:#050404}
+.sig{font:400 2.2rem var(--hand);margin-top:2.2rem;color:var(--text)}
+
+.letter-wrap{padding:7rem 1rem 2rem}
+.letter-title{text-align:center;font-size:clamp(1.8rem,5vw,3rem);max-width:18ch;margin:0 auto 3rem;font-style:italic}
+.paper{max-width:680px;margin:0 auto;padding:clamp(2rem,7vw,4.5rem) clamp(1.5rem,6vw,4.5rem);color:#2b2220;font:400 clamp(1.4rem,3.8vw,1.8rem)/1.6 var(--hand);
+  background:radial-gradient(ellipse at 20% 0,#f1e6d3,#e3d4ba);box-shadow:0 40px 80px -30px #000;transform:rotate(-.4deg)}
+.paper p{margin-bottom:1.3em}
+.paper .gap{margin-top:2.2em}
+.paper .sign{text-align:right;margin:2em 0 0;font-size:1.3em}
+
+/* sorry + thanks pages */
+.sorry{min-height:100svh;display:grid;place-content:center;justify-items:center;text-align:center;padding:6rem 1.5rem 4rem;gap:1.4rem}
+.sorry h1{font-size:clamp(2.4rem,9vw,5rem)}
+.sorry .q{font:italic 300 clamp(1.3rem,4vw,2rem) var(--serif)}
+.bear{width:150px;animation:sway 4s ease-in-out infinite}
+.bear .blink{transform-origin:center;transform-box:fill-box;animation:blink 4.5s infinite}
+.bear .tear{animation:tear 3s ease-in infinite}
+@keyframes sway{50%{transform:rotate(3deg) translateY(3px)}}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes tear{0%{opacity:0;transform:translateY(0)}20%{opacity:1}100%{opacity:0;transform:translateY(26px)}}
+.choices{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
+.choices .btn{min-width:11rem}
+#reply{min-height:3.5rem;max-width:30ch;color:var(--mute);font:italic 300 1.3rem var(--serif);opacity:0;transition:opacity 1s}
+#reply.on{opacity:1}
+.kisses{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.kisses span{position:absolute;top:-2rem;font-size:1.6rem;opacity:.85;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(25deg)}}
+.row{letter-spacing:.4em;font-size:1.5rem;margin:.6rem 0}
+.wa{border-color:var(--accent)}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/story.css">
+</head>
+<body data-nav style="background:#050404">
+<div class="kisses" id="kisses" aria-hidden="true"></div>
+<main class="sorry">
+  <h1 class="reveal">Thank you.</h1>
+  <p class="q reveal" style="--d:1s">For forgiving me. It means more than I can say.</p>
+  <p class="row reveal" style="--d:1.8s" aria-hidden="true">😘 💋 😘 💋 😘</p>
+  <p class="q reveal" style="--d:2.4s">Lots and lots of kisses, Bhindi🫀.</p>
+  <p class="row reveal" style="--d:3s" aria-hidden="true">💋 😘 💋 😘 💋</p>
+  <!-- WHATSAPP: replace 91XXXXXXXXXX with your number (country code + number, no + or spaces).
+       The text after ?text= is the pre-written message (URL-encoded). Edit the line in message below. -->
+  <a class="btn wa reveal" style="--d:3.6s" id="wa" href="#">Text me fast, i'm waiting</a>
+  <p class="small reveal" style="--d:3.8s">Love you 😘</p>
+</main>
+<script src="js/main.js"></script>
+<script>
+  const NUMBER = '916200746561';   /* <-- your WhatsApp number */
+  const message = "hello, hello, mai bahoot badi gadhi hu, humesha faltu gussa krti hu tere pe, i'm sorry 💋💋";   /* <-- edit */
+  document.getElementById('wa').href = `https://wa.me/${NUMBER}?text=${encodeURIComponent(message)}`;
+  document.getElementById('wa').target = '_blank'; document.getElementById('wa').rel = 'noopener';
+  /* gentle falling kisses (skipped if reduced motion) */
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const box = document.getElementById('kisses');
+    for (let i = 0; i < 22; i++) {
+      const s = document.createElement('span');
+      s.textContent = i % 2 ? '💋' : '😘';
+      s.style.left = Math.random()*100 + '%';
+      s.style.animationDuration = (7 + Math.random()*7) + 's';
+      s.style.animationDelay = (Math.random()*8) + 's';
+      box.append(s);
+    }
+  }
+</script>
+<script src="js/animations.js"></script>
+</body></html>

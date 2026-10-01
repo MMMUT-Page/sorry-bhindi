@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I'm sorry</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/story.css">
+</head>
+<body data-nav style="background:#050404">
+<main class="sorry">
+  <!-- CUTE ANIMATION: pure SVG/CSS. To use a GIF instead, replace the <svg> with <img src="assets/sorry.gif" alt="..." width="180"> -->
+  <svg class="bear reveal" viewBox="0 0 150 150" role="img" aria-label="A small teddy bear with a tear, saying sorry">
+    <circle cx="35" cy="35" r="20" fill="#b58a6a"/><circle cx="115" cy="35" r="20" fill="#b58a6a"/>
+    <circle cx="35" cy="35" r="10" fill="#e3c3a6"/><circle cx="115" cy="35" r="10" fill="#e3c3a6"/>
+    <circle cx="75" cy="80" r="58" fill="#c9a07e"/>
+    <ellipse cx="75" cy="98" rx="24" ry="18" fill="#e9d0b6"/>
+    <ellipse cx="75" cy="90" rx="7" ry="5" fill="#3a2a25"/>
+    <path d="M65 108 Q75 100 85 108" stroke="#3a2a25" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g class="blink"><circle cx="55" cy="70" r="6" fill="#3a2a25"/><circle cx="95" cy="70" r="6" fill="#3a2a25"/></g>
+    <circle cx="42" cy="88" r="8" fill="#c97b7b" opacity=".45"/><circle cx="108" cy="88" r="8" fill="#c97b7b" opacity=".45"/>
+    <path class="tear" d="M55 80 q-5 9 0 12 q5 -3 0 -12z" fill="#9fc6e8"/>
+  </svg>
+  <h1 class="reveal" style="--d:.5s">I'm sorry.</h1>
+  <p class="q reveal" style="--d:1.2s">Have you forgiven me?</p>
+  <p class="small reveal" style="--d:1.6s">Pls yrr maan jaa, iss baar accha white sause pasta khilaunga pukka !</p>
+  <div class="choices reveal" style="--d:2s">
+    <a class="btn" id="yes" href="thanks.html">Yes, I forgive you</a>
+    <button class="btn" id="notyet" type="button">Not yet</button>
+  </div>
+  <p id="reply" aria-live="polite"></p>
+</main>
+<script src="js/main.js"></script>
+<script>
+  /* EDIT the reply shown when she picks "Not yet" */
+  document.getElementById('notyet').addEventListener('click', () => {
+    const r = document.getElementById('reply');
+    r.textContent = "Please Maan jaa pls pls pls pls 😩😩😭😭";
+    r.classList.add('on');
+  });
+</script>
+<script src="js/animations.js"></script>
+</body></html>

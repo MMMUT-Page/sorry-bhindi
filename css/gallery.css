@@ -1,0 +1,42 @@
+/* Gallery: her page + memories page */
+.g-hero{min-height:70svh;display:grid;place-content:center;text-align:center;padding:7rem 1.5rem 2rem}
+.g-hero h1{font-size:clamp(3rem,13vw,8rem)}
+.g-hero p{font:italic 300 1.3rem var(--serif);color:var(--mute);margin-top:1rem}
+.section{max-width:1200px;margin:0 auto;padding:4rem 1.25rem}
+.section>h2{font-size:clamp(1.6rem,4vw,2.4rem);font-style:italic;margin-bottom:2.5rem;text-align:center}
+
+.masonry{columns:1;column-gap:2rem}
+@media(min-width:640px){.masonry{columns:2}}
+@media(min-width:1000px){.masonry{columns:3}}
+.card{break-inside:avoid;margin:0 0 2.5rem;cursor:zoom-in}
+.card .frame{aspect-ratio:4/5}
+.card:nth-child(3n+2) .frame{aspect-ratio:1/1}
+.card:nth-child(3n) .frame{aspect-ratio:3/4}
+.card img{transition:transform 1.4s var(--ease),filter .8s}
+.card:hover img{transform:scale(1.05);filter:sepia(0) contrast(1.05) saturate(1)}
+.card figcaption{font:italic 300 1.15rem var(--serif);color:var(--mute);padding:.8rem .2rem 0}
+
+.polaroids{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:3rem 2rem;justify-items:center}
+.polaroid{width:min(100%,300px);background:#f1e9dc;padding:.8rem .8rem 1rem;color:#2b2220;box-shadow:0 20px 40px -15px #000;transform:rotate(var(--r,0deg));transition:transform .6s var(--ease);cursor:zoom-in}
+.polaroid:nth-child(odd){--r:-2.2deg}.polaroid:nth-child(even){--r:1.8deg}.polaroid:nth-child(3n){--r:-.8deg}
+.polaroid:hover{transform:rotate(0) translateY(-10px) scale(1.03)}
+.polaroid .frame{aspect-ratio:1/1;box-shadow:none}
+.polaroid figcaption{font:400 1.3rem/1.2 var(--hand);text-align:center;padding-top:.8rem}
+
+.wide{max-width:1400px;margin:4rem auto;padding:0 1rem;cursor:zoom-in}
+.wide .frame{aspect-ratio:4/5}
+@media(min-width:800px){.wide .frame{aspect-ratio:21/9}}
+.wide figcaption{text-align:center;font:italic 300 1.2rem var(--serif);color:var(--mute);padding-top:1rem}
+
+.hscroll{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem 1.25rem 2rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.hscroll figure{flex:0 0 min(78vw,340px);scroll-snap-align:center;cursor:zoom-in}
+.hscroll figcaption{font:italic 300 1.1rem var(--serif);color:var(--mute);padding-top:.7rem}
+
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,4,4,.96);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.5s var(--ease);padding:1rem}
+.lb.open{opacity:1;visibility:visible}
+.lb figure{max-width:94vw;text-align:center}
+.lb img{max-height:78vh;max-width:94vw;margin:auto;box-shadow:0 30px 80px #000}
+.lb figcaption{font:italic 300 1.3rem var(--serif);color:var(--mute);margin-top:1rem}
+.lb button{position:absolute;background:none;border:0;color:var(--text);font-size:2rem;width:56px;height:56px;cursor:pointer;opacity:.7}
+.lb button:hover{opacity:1}
+.lb .x{top:.8rem;right:.8rem}.lb .p{left:.3rem;top:50%}.lb .n{right:.3rem;top:50%}
